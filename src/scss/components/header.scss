@@ -1,6 +1,6 @@
 .header {
 	width: 100%;
-	height: 78px;
+	height: 76px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -21,7 +21,7 @@
 
         @media (max-width: $desktopSmall) {
             margin: 0;
-			padding-top: 10px;
+			padding: 10px 0;
 			flex-wrap: wrap;
 			row-gap: 15px;
         }
