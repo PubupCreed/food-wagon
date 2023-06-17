@@ -27,13 +27,15 @@
                 width: 100%;
                 height: auto;
                 min-height: 100%;
+                object-fit: cover;
             }
         }
     }
 
     .order-card {
         position: absolute;
-        max-width: $maxWidthContainer;
+        max-width: $maxWidthContainer + $containerPadding + $containerPadding;
+        padding: 0 $containerPadding;
         width: 100%;
         top: 127px;
         left: calc(50% + 9px);
@@ -47,6 +49,10 @@
             color: $mainBG;
             text-shadow: 0px 14px 15px rgba(255, 174, 0, 0.01), 0px 27px 82px rgba(255, 174, 0, 0.28);
             font-weight: 700;
+
+            @media (max-width: $mobile) {
+                font-size: clamp(45px, 10vw, 88px);
+            }
         }
 
         &__suptitle {
@@ -57,6 +63,10 @@
             font-size: 22px;
             line-height: 120%;
             color: #504F4F;
+
+            @media (max-width: $mobile) {
+                font-size: clamp(16px, 3vw, 22px);
+            }
         }
 
         .order-location {
@@ -73,6 +83,8 @@
                 display: flex;
                 gap: 8px;
                 border-bottom: 1px solid #EEEEEE;
+                height: 100%;
+                flex-wrap: wrap;
 
                 &-btn {
                     font-style: normal;
@@ -139,6 +151,12 @@
                 height: 108px;
                 justify-content: center;
                 align-items: center;
+                padding: 0 24px;
+
+                @media (max-width: $mobile) {
+                    height: 100%;
+                    padding: 24px;
+                }
 
                 &-container {
                     position: relative;
@@ -147,6 +165,10 @@
                     display: flex;
                     align-items: center;
                     gap: 15px;
+
+                    @media (max-width: $mobile) {
+                        flex-direction: column;
+                    }
 
                     &::before {
                         position: absolute;
@@ -158,6 +180,10 @@
                         width: 18px;
                         height: 34px;
                         background: url('../../../public/hero-banner/location.svg') no-repeat center center / contain;
+
+                        @media (max-width: $mobile) {
+                            top: 5px;
+                        }
                     }
 
                     .copy-address {
@@ -175,6 +201,14 @@
                             width: 15px;
                             height: 15px;
                             background: url('../../../public/hero-banner/magnifying-glass.svg') no-repeat center center / contain;
+
+                            @media (max-width: $mobile) {
+                                display: none;
+                            }
+                        }
+
+                        @media (max-width: $mobile) {
+                            max-width: 100%;
                         }
                     }
                 }
@@ -190,6 +224,10 @@
 
                     &::placeholder {
                         font-family: $fontFamily;
+                    }
+
+                    @media (max-width: $mobile) {
+                        max-width: 100%;
                     }
                 }
 
